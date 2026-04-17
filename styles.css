@@ -639,10 +639,6 @@ textarea {
     font-size: clamp(3rem, 14vw, 4.6rem);
   }
 
-  .hero-bg-focus {
-    object-position: 64% 42%;
-  }
-
   .services-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
