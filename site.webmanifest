@@ -1,7 +1,7 @@
 {
   "name": "ALL CORE Sawing & Drilling",
   "short_name": "ALL CORE",
-  "start_url": "/",
+  "start_url": "/allcore-website/",
   "display": "standalone",
   "background_color": "#fcfbf8",
   "theme_color": "#ff6d0d",
