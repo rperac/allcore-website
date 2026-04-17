@@ -284,7 +284,7 @@ textarea {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -313,6 +313,14 @@ textarea {
 
 .service-image-hand {
   object-position: 32% 38%;
+}
+
+.service-image-grinding {
+  object-position: 48% 52%;
+}
+
+.service-image-stripout {
+  object-position: 52% 42%;
 }
 
 .service-body {
