@@ -161,16 +161,18 @@ textarea {
 }
 
 .hero-bg {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: #111;
 }
 
 .hero-bg-focus {
-  object-position: 58% 42%;
+  object-position: center center;
 }
 
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(16, 16, 16, 0.82) 0%, rgba(16, 16, 16, 0.62) 33%, rgba(16, 16, 16, 0.28) 100%);
+    linear-gradient(90deg, rgba(16, 16, 16, 0.94) 0%, rgba(16, 16, 16, 0.78) 30%, rgba(16, 16, 16, 0.36) 58%, rgba(16, 16, 16, 0.08) 100%);
 }
 
 .hero-content {
@@ -178,11 +180,12 @@ textarea {
   z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   min-height: 670px;
 }
 
 .hero-copy {
-  max-width: 540px;
+  max-width: 460px;
   color: #fff;
 }
 
