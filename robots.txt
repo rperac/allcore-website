@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://rperac.github.io/allcore-website/sitemap.xml
