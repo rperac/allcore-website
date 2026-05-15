@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "slug": "road-sawing-five-dock",
+      "title": "Road Sawing Works in Five Dock",
+      "date": "2026-04-22",
+      "location": "Five Dock, NSW",
+      "service": "Road Sawing",
+      "summary": "Controlled road sawing for a civil works program with clean cuts and fast site handover.",
+      "description": "ALL CORE completed precision road sawing to support a programmed civil works scope in Five Dock. The work focused on clean line cutting, controlled equipment operation and keeping the site ready for the next stage of construction.",
+      "coverImage": "./public/assets/road-saw-line.jpeg",
+      "galleryImages": [
+        "./public/assets/road-saw-line.jpeg",
+        "./public/assets/road-saw-hero.jpeg",
+        "./public/assets/road-saw-side.jpeg"
+      ],
+      "altText": "Road sawing project completed by ALL CORE"
+    },
+    {
+      "slug": "core-drilling-night-works",
+      "title": "After-Hours Core Drilling",
+      "date": "2026-03-18",
+      "location": "Sydney, NSW",
+      "service": "Core Drilling",
+      "summary": "Night works core drilling completed for service penetrations with minimal disruption.",
+      "description": "This after-hours project required accurate core drilling for service access while reducing disruption to surrounding works. ALL CORE supplied the equipment and crew needed to complete the penetrations safely and efficiently.",
+      "coverImage": "./public/assets/core-drill-night.jpeg",
+      "galleryImages": [
+        "./public/assets/core-drill-night.jpeg",
+        "./public/assets/core-drill-1.jpeg",
+        "./public/assets/core-drill-2.jpeg"
+      ],
+      "altText": "Core drilling equipment operating at night"
+    },
+    {
+      "slug": "wall-opening-structural-modification",
+      "title": "Wall Opening and Structural Modification",
+      "date": "2026-02-11",
+      "location": "Inner Sydney, NSW",
+      "service": "Wall Sawing",
+      "summary": "Clean wall sawing and penetration work for a building modification project.",
+      "description": "ALL CORE supported a building modification scope with controlled wall sawing and penetration work. The project required accurate cutting, careful site coordination and a clean handover for follow-on trades.",
+      "coverImage": "./public/assets/wall-penetration.jpeg",
+      "galleryImages": [
+        "./public/assets/wall-penetration.jpeg",
+        "./public/assets/wall-saw.jpeg",
+        "./public/assets/cover-van.jpeg"
+      ],
+      "altText": "Wall penetration work completed by ALL CORE"
+    }
+  ]
+}

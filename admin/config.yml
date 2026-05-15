@@ -1,0 +1,65 @@
+backend:
+  name: github
+  repo: rperac/allcore-website
+  branch: main
+
+media_folder: public/assets/projects
+public_folder: ./public/assets/projects
+
+collections:
+  - name: site_data
+    label: Site Data
+    files:
+      - name: projects
+        label: Projects
+        file: data/projects.json
+        format: json
+        fields:
+          - label: Projects
+            name: projects
+            widget: list
+            summary: "{{fields.date}} - {{fields.title}}"
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Slug
+                name: slug
+                widget: string
+                hint: Use lowercase words separated by hyphens, like road-sawing-five-dock.
+              - label: Date
+                name: date
+                widget: date
+                format: YYYY-MM-DD
+              - label: Location
+                name: location
+                widget: string
+              - label: Service
+                name: service
+                widget: select
+                options:
+                  - Road Sawing
+                  - Core Drilling
+                  - Wall Sawing
+                  - Hand Sawing
+                  - Grinding / Floor Prep
+                  - Strip Outs / Demo
+              - label: Summary
+                name: summary
+                widget: text
+              - label: Description
+                name: description
+                widget: text
+              - label: Cover Image
+                name: coverImage
+                widget: image
+              - label: Gallery Images
+                name: galleryImages
+                widget: list
+                field:
+                  label: Image
+                  name: image
+                  widget: image
+              - label: Alt Text
+                name: altText
+                widget: string
