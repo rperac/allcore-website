@@ -472,7 +472,7 @@ textarea {
 
 .services-capability {
   display: grid;
-  gap: 1.45rem;
+  gap: 1.15rem;
 }
 
 .services-intro {
@@ -509,7 +509,7 @@ textarea {
 
 .services-gallery {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.22fr) repeat(2, minmax(0, 1fr));
   gap: 1px;
   background: var(--line);
   border-bottom: 1px solid var(--line);
@@ -517,7 +517,7 @@ textarea {
 
 .services-gallery-item {
   position: relative;
-  min-height: clamp(250px, 28vw, 370px);
+  min-height: clamp(220px, 18vw, 260px);
   margin: 0;
   overflow: hidden;
   background: var(--dark-2);
@@ -547,23 +547,23 @@ textarea {
 
 .services-gallery-item figcaption {
   position: absolute;
-  left: 1.1rem;
-  bottom: 1rem;
+  left: 0.95rem;
+  bottom: 0.85rem;
   z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
   margin: 0;
   color: #fff;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .services-gallery-item figcaption span {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   background: var(--red);
 }
 
@@ -1252,7 +1252,7 @@ textarea {
   }
 
   .services-gallery-item {
-    min-height: 220px;
+    min-height: 180px;
   }
 
   .services-gallery-item figcaption {
