@@ -279,7 +279,7 @@ textarea {
 .hero h1,
 .section-h,
 .page-title,
-.service-pillar h3,
+.service-group h3,
 .project-card h3,
 .capability-card h3,
 .quote-form h2 {
@@ -470,44 +470,56 @@ textarea {
   color: rgba(255, 255, 255, 0.45);
 }
 
-.service-pillars {
+.service-groups {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
-.service-pillar {
+.service-group {
   display: grid;
-  grid-template-rows: 250px 1fr;
-  background: var(--dark-2);
+  grid-template-columns: minmax(0, 1fr) 190px;
+  min-height: 100%;
+  background:
+    linear-gradient(135deg, rgba(227, 0, 35, 0.08), transparent 42%),
+    var(--dark-2);
   border: 1px solid var(--line);
   overflow: hidden;
 }
 
-.service-pillar-feature {
-  grid-row: span 2;
-  grid-template-rows: 420px 1fr;
+.service-group-feature {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
 }
 
-.service-pillar img {
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.86);
-}
-
-.service-pillar-body {
+.service-group-content {
   display: grid;
   align-content: start;
   gap: 1rem;
-  padding: 1.55rem;
+  padding: clamp(1.35rem, 2.4vw, 2.25rem);
 }
 
-.service-pillar h3 {
+.service-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.service-type {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.service-group h3 {
   color: #fff;
-  font-size: clamp(2rem, 3vw, 3.25rem);
+  font-size: clamp(1.85rem, 3vw, 3.35rem);
 }
 
-.service-pillar p {
+.service-group p {
   margin: 0;
   color: rgba(255, 255, 255, 0.68);
   line-height: 1.65;
@@ -520,26 +532,55 @@ textarea {
   letter-spacing: 0.16em;
 }
 
-.service-includes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
 }
 
-.service-includes span {
+.service-detail-grid span {
   display: inline-flex;
-  padding: 0.42rem 0.65rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  align-items: center;
+  min-height: 42px;
+  padding: 0.58rem 0.72rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   color: rgba(255, 255, 255, 0.84);
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .typical-works {
   padding-top: 1rem;
   border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.service-group-media {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  border-left: 1px solid var(--line);
+  background: #111;
+}
+
+.service-group-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(18, 18, 18, 0.28), transparent 62%);
+  pointer-events: none;
+}
+
+.service-group-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  filter: brightness(0.82) contrast(1.04);
 }
 
 .project-section,
@@ -996,12 +1037,16 @@ textarea {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .service-pillars {
+  .service-groups,
+  .service-group,
+  .service-group-feature {
     grid-template-columns: 1fr;
   }
 
-  .service-pillar-feature {
-    grid-row: auto;
+  .service-group-media {
+    min-height: 210px;
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 
   .trust-grid {
@@ -1126,9 +1171,20 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .service-pillar,
-  .service-pillar-feature {
-    grid-template-rows: 220px 1fr;
+  .service-groups {
+    gap: 1rem;
+  }
+
+  .service-group-media {
+    min-height: 165px;
+  }
+
+  .service-group-media img {
+    min-height: 165px;
+  }
+
+  .service-detail-grid {
+    grid-template-columns: 1fr;
   }
 
   .check-row {
