@@ -279,9 +279,8 @@ textarea {
 .hero h1,
 .section-h,
 .page-title,
-.svc-body h3,
+.service-pillar h3,
 .project-card h3,
-.why-grid h3,
 .capability-card h3,
 .quote-form h2 {
   margin: 0;
@@ -411,7 +410,7 @@ textarea {
 }
 
 .about-body p,
-.why-grid p,
+.check-row p,
 .project-card p,
 .project-story p,
 .contact-info p {
@@ -471,37 +470,76 @@ textarea {
   color: rgba(255, 255, 255, 0.45);
 }
 
-.services-grid {
+.service-pillars {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.15rem;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 1.25rem;
 }
 
-.svc-card {
+.service-pillar {
+  display: grid;
+  grid-template-rows: 250px 1fr;
   background: var(--dark-2);
   border: 1px solid var(--line);
   overflow: hidden;
 }
 
-.svc-img {
-  height: 260px;
+.service-pillar-feature {
+  grid-row: span 2;
+  grid-template-rows: 420px 1fr;
+}
+
+.service-pillar img {
+  height: 100%;
   object-fit: cover;
   filter: brightness(0.86);
 }
 
-.svc-body {
-  padding: 1.35rem;
+.service-pillar-body {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: 1.55rem;
 }
 
-.svc-body h3 {
+.service-pillar h3 {
   color: #fff;
-  font-size: 1.75rem;
+  font-size: clamp(2rem, 3vw, 3.25rem);
 }
 
-.svc-body p {
-  margin: 0.8rem 0 0;
+.service-pillar p {
+  margin: 0;
   color: rgba(255, 255, 255, 0.68);
   line-height: 1.65;
+}
+
+.service-number {
+  color: var(--red);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.service-includes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-includes span {
+  display: inline-flex;
+  padding: 0.42rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.typical-works {
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
 }
 
 .project-section,
@@ -590,20 +628,37 @@ textarea {
   margin: 0.9rem 0 1.2rem;
 }
 
-.why-grid {
+.site-checklist {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  border-top: 1px solid var(--line-light);
 }
 
-.why-grid article {
-  padding: 1.6rem;
-  background: #fff;
-  border: 1px solid var(--line-light);
+.check-row {
+  display: grid;
+  grid-template-columns: 72px minmax(220px, 0.45fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line-light);
 }
 
-.why-grid h3 {
-  font-size: 1.8rem;
+.check-row span {
+  color: var(--red);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.check-row strong {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.check-row p {
+  margin: 0;
 }
 
 .capability-section {
@@ -935,11 +990,18 @@ textarea {
 }
 
 @media (max-width: 1080px) {
-  .services-grid,
   .project-grid,
   .gallery-grid,
   .capability-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .service-pillar-feature {
+    grid-row: auto;
   }
 
   .trust-grid {
@@ -950,7 +1012,6 @@ textarea {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .why-grid,
   .about-grid,
   .contact-grid,
   .project-detail-grid {
@@ -1059,12 +1120,24 @@ textarea {
   }
 
   .stats-grid,
-  .services-grid,
   .project-grid,
-  .why-grid,
   .capability-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-pillar,
+  .service-pillar-feature {
+    grid-template-rows: 220px 1fr;
+  }
+
+  .check-row {
+    grid-template-columns: 44px 1fr;
+    gap: 0.75rem 1rem;
+  }
+
+  .check-row p {
+    grid-column: 2;
   }
 
   .trust-grid {
