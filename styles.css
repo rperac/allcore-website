@@ -952,6 +952,10 @@ textarea {
   color: #777;
 }
 
+.form-botcheck {
+  display: none;
+}
+
 .form-submit {
   width: 100%;
 }

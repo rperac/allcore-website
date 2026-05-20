@@ -354,12 +354,16 @@
             <p class="abn">ABN: 84 638 677 577</p>
           </div>
 
-          <form class="quote-form" action="mailto:info@allcore.com.au" method="post" enctype="text/plain">
+          <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
             <h2>Request A Quote</h2>
-            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="hidden" name="access_key" value="3eda30ff-a8ad-4b15-b7f6-4042c3f30ea9" />
+            <input type="hidden" name="subject" value="New quote request from ALL CORE website" />
+            <input type="hidden" name="from_name" value="ALL CORE Website" />
+            <input type="checkbox" name="botcheck" class="form-botcheck" tabindex="-1" autocomplete="off" />
+            <input type="text" name="name" placeholder="Your Name" autocomplete="name" required />
             <input type="email" name="email" placeholder="Email Address" required />
-            <input type="tel" name="phone" placeholder="Phone Number" required />
-            <textarea name="project" rows="6" placeholder="Tell us about your project..." required></textarea>
+            <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" required />
+            <textarea name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
             <button class="btn btn-red form-submit" type="submit">Send Message</button>
           </form>
         </div>
