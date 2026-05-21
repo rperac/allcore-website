@@ -829,8 +829,10 @@ textarea {
 
 .clients-row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
+  max-width: 1080px;
+  margin: 0 auto;
   background: var(--line-light);
   border: 1px solid var(--line-light);
 }
@@ -839,34 +841,49 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 132px;
-  padding: 1.35rem;
+  min-height: 158px;
+  padding: 1.55rem;
   background: #fbfaf7;
 }
 
 .client-logo {
+  --logo-w: 190px;
+  --logo-h: 72px;
   width: auto;
   height: auto;
-  max-width: 150px;
-  max-height: 58px;
+  max-width: min(100%, var(--logo-w));
+  max-height: var(--logo-h);
   object-fit: contain;
 }
 
-.client-logo-fdc,
-.client-logo-acciona,
-.client-logo-bmd,
-.client-logo-billbergia {
-  max-width: 168px;
+.client-logo-fdc {
+  --logo-w: 230px;
+  --logo-h: 70px;
 }
 
 .client-logo-cpb {
-  max-width: 170px;
-  max-height: 56px;
+  --logo-w: 230px;
+  --logo-h: 58px;
+}
+
+.client-logo-acciona {
+  --logo-w: 190px;
+  --logo-h: 76px;
 }
 
 .client-logo-rix {
-  max-width: 132px;
-  max-height: 76px;
+  --logo-w: 178px;
+  --logo-h: 92px;
+}
+
+.client-logo-bmd {
+  --logo-w: 235px;
+  --logo-h: 72px;
+}
+
+.client-logo-billbergia {
+  --logo-w: 260px;
+  --logo-h: 70px;
 }
 
 .cta-section {
@@ -1349,6 +1366,11 @@ textarea {
 
   .clients-row {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .client-cell {
+    min-height: 124px;
+    padding: 1.15rem;
   }
 
   .stat-cell,
