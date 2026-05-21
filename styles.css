@@ -839,16 +839,34 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
-  background: var(--bg);
+  min-height: 132px;
+  padding: 1.35rem;
+  background: #fbfaf7;
 }
 
-.client-ph {
-  width: 72%;
+.client-logo {
+  width: auto;
+  height: auto;
+  max-width: 150px;
+  max-height: 58px;
+  object-fit: contain;
+}
+
+.client-logo-fdc,
+.client-logo-acciona,
+.client-logo-bmd,
+.client-logo-billbergia {
+  max-width: 168px;
+}
+
+.client-logo-cpb {
+  max-width: 128px;
+  max-height: 72px;
+}
+
+.client-logo-rix {
   max-width: 132px;
-  height: 34px;
-  background: rgba(0, 0, 0, 0.08);
-  border-radius: 2px;
+  max-height: 76px;
 }
 
 .cta-section {
