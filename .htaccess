@@ -2,6 +2,5 @@ Options -Indexes
 
 RewriteEngine On
 
-RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} !^allcore\.com\.au$ [NC]
-RewriteRule ^ https://allcore.com.au%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.allcore\.com\.au$ [NC]
+RewriteRule ^ http://allcore.com.au%{REQUEST_URI} [R=301,L]
