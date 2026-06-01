@@ -4,6 +4,24 @@ const projectDate = new Intl.DateTimeFormat("en-AU", {
   year: "numeric"
 });
 
+const siteOrigin = "http://allcore.com.au";
+
+function setMeta(selector, attr, value) {
+  const element = document.head.querySelector(selector);
+  if (element) element.setAttribute(attr, value);
+}
+
+function ensureJsonLd(id, data) {
+  let script = document.getElementById(id);
+  if (!script) {
+    script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = id;
+    document.head.appendChild(script);
+  }
+  script.textContent = JSON.stringify(data);
+}
+
 function setupNavigation() {
   const navbar = document.getElementById("navbar");
   const hamburger = document.getElementById("hamburger");
@@ -63,6 +81,52 @@ function projectCard(project) {
   `;
 }
 
+function setProjectMeta(project) {
+  const projectUrl = `${siteOrigin}/project.html?project=${encodeURIComponent(project.slug)}`;
+  const imageUrl = new URL(project.coverImage, `${siteOrigin}/`).href;
+  const title = `${project.title} | ALL CORE Sawing & Drilling`;
+  const description = project.summary || project.description || "Completed ALL CORE Sawing & Drilling project.";
+
+  document.title = title;
+  setMeta('meta[name="description"]', "content", description);
+  setMeta('link[rel="canonical"]', "href", projectUrl);
+  setMeta('meta[property="og:title"]', "content", title);
+  setMeta('meta[property="og:description"]', "content", description);
+  setMeta('meta[property="og:url"]', "content", projectUrl);
+  setMeta('meta[property="og:image"]', "content", imageUrl);
+  setMeta('meta[name="twitter:title"]', "content", title);
+  setMeta('meta[name="twitter:description"]', "content", description);
+  setMeta('meta[name="twitter:image"]', "content", imageUrl);
+
+  ensureJsonLd("project-jsonld", {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": project.title,
+    "description": description,
+    "image": imageUrl,
+    "datePublished": project.date,
+    "mainEntityOfPage": projectUrl,
+    "author": {
+      "@type": "Organization",
+      "name": "ALL CORE Sawing & Drilling",
+      "url": siteOrigin
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ALL CORE Sawing & Drilling",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteOrigin}/public/assets/allcore-logo-black-web.png`
+      }
+    },
+    "about": {
+      "@type": "Service",
+      "name": project.service,
+      "areaServed": project.location
+    }
+  });
+}
+
 async function renderProjectLists() {
   const lists = document.querySelectorAll("[data-project-list]");
   if (!lists.length) return;
@@ -116,7 +180,7 @@ async function renderProjectDetail() {
       return;
     }
 
-    document.title = `${project.title} | ALL CORE Sawing & Drilling`;
+    setProjectMeta(project);
     const gallery = project.galleryImages
       .map((image, index) => `<img src="${image}" alt="${project.altText} photo ${index + 1}" loading="lazy" />`)
       .join("");

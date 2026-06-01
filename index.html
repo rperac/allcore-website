@@ -8,6 +8,23 @@
       name="description"
       content="ALL CORE provides commercial concrete cutting, infrastructure concrete cutting, core drilling and concrete sawing across Sydney and NSW for builders and contractors."
     />
+    <link rel="canonical" href="http://allcore.com.au/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ALL CORE Sawing & Drilling" />
+    <meta property="og:title" content="Concrete Cutting Sydney & NSW | ALL CORE" />
+    <meta
+      property="og:description"
+      content="Commercial concrete cutting, core drilling, concrete sawing, floor preparation and strip outs across Sydney and NSW."
+    />
+    <meta property="og:url" content="http://allcore.com.au/" />
+    <meta property="og:image" content="http://allcore.com.au/public/assets/hero-van-new.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Concrete Cutting Sydney & NSW | ALL CORE" />
+    <meta
+      name="twitter:description"
+      content="Commercial concrete cutting, core drilling, concrete sawing, floor preparation and strip outs across Sydney and NSW."
+    />
+    <meta name="twitter:image" content="http://allcore.com.au/public/assets/hero-van-new.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +33,44 @@
     />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "http://allcore.com.au/#business",
+        "name": "ALL CORE Sawing & Drilling",
+        "url": "http://allcore.com.au/",
+        "image": "http://allcore.com.au/public/assets/hero-van-new.jpg",
+        "logo": "http://allcore.com.au/public/assets/allcore-logo-black-web.png",
+        "telephone": "+61452454160",
+        "email": "info@allcore.com.au",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Five Dock",
+          "addressRegion": "NSW",
+          "postalCode": "2046",
+          "addressCountry": "AU"
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Sydney" },
+          { "@type": "AdministrativeArea", "name": "New South Wales" }
+        ],
+        "openingHours": "Mo-Su 00:00-23:59",
+        "priceRange": "$$",
+        "description": "Commercial concrete cutting, core drilling, concrete sawing, floor preparation and strip outs across Sydney and NSW.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Concrete cutting services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Core Drilling" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Road Sawing" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wall Sawing" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Floor Preparation and Grinding" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strip Outs and Demolition Support" } }
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
     <header class="topbar">
@@ -51,9 +106,12 @@
       <section class="hero" id="home">
         <img
           class="hero-bg"
-          src="./public/assets/hero-van-new.png"
+          src="./public/assets/hero-van-new.jpg"
           alt="ALL CORE branded van on site"
+          width="1552"
+          height="1013"
           loading="eager"
+          decoding="async"
           fetchpriority="high"
         />
         <div class="hero-overlay"></div>
@@ -391,7 +449,7 @@
             <input type="hidden" name="access_key" value="3eda30ff-a8ad-4b15-b7f6-4042c3f30ea9" />
             <input type="hidden" name="subject" value="New quote request from ALL CORE website" />
             <input type="hidden" name="from_name" value="ALL CORE Website" />
-            <input type="hidden" name="redirect" value="https://allcore.com.au/thank-you.html" />
+            <input type="hidden" name="redirect" value="http://allcore.com.au/thank-you.html" />
             <input type="checkbox" name="botcheck" class="form-botcheck" tabindex="-1" autocomplete="off" />
             <input type="text" name="name" placeholder="Your Name" autocomplete="name" required />
             <input type="email" name="email" placeholder="Email Address" required />
