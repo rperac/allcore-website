@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/l7smortppib3/public_html/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/rm -rf $DEPLOYPATH/admin $DEPLOYPATH/data $DEPLOYPATH/public
+    - /bin/cp index.html project.html projects.html thank-you.html about.html services.html contact.html script.js styles.css .htaccess $DEPLOYPATH
+    - /bin/cp -R data public $DEPLOYPATH
